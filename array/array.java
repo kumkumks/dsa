@@ -6,9 +6,10 @@ void main(){
         arr[i]=Integer.parseInt(IO.readln("Enter the element: "));
     }
     int smallest = arr[0];
+    int largest = arr[0];
     for(int i=0;i<n;i++){
         
-       if(arr[i]<smallest){
+       if(arr[i]>smallest && arr[i]!=smallest && arr[i]<largest){
         smallest =arr[i];
        }
     }
