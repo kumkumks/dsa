@@ -31,7 +31,7 @@ void main(){
            if(temp[i] > temp[j]) {
                int t = temp[i];
                temp[i] = temp[j];
-               temp[j] = t;
+               temp[j] =t;
            }
         }
     }
