@@ -5,13 +5,37 @@ void main(){
     for(int i=0;i<n;i++){
         arr[i]=Integer.parseInt(IO.readln("Enter the element: "));
     }
-    int smallest = arr[0];
-    int largest = arr[0];
+    int temp[]=new int[n];
+     int k = 0;
+    IO.println("after removing duplicates: ");
     for(int i=0;i<n;i++){
-        
-       if(arr[i]>smallest && arr[i]!=smallest && arr[i]<largest){
-        smallest =arr[i];
-       }
+        boolean flag = false;
+     for(int j=0;j<k;j++){
+            if(arr[i]==temp[j]){
+                flag = true;
+                break;
+            }
+        }
+        if(!flag){         
+            temp[k]=arr[i];
+            k++;
+        }
+     }
+    for(int i=0;i<k;i++){
+        IO.println(temp[i]);
     }
-       IO.println(smallest);
+
+    IO.println("after sorting: ");
+    for (int i= 0; i<k; i++) {
+        for (int j = i + 1; j < k; j++) {
+           if(temp[i] > temp[j]) {
+               int t = temp[i];
+               temp[i] = temp[j];
+               temp[j] = t;
+           }
+        }
+    }
+    for(int i=0;i<k;i++){
+        IO.println(temp[i]);
+    }
 }      
